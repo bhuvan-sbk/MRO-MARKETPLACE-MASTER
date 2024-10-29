@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "frontend/build"
+
+[functions]
+  backend = "backend/server.js"
