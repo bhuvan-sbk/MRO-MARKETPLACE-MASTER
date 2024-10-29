@@ -1,0 +1,30 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "backend/**/*.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "frontend/**/*.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "frontend/**/*.html",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "backend/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "frontend/index.html"
+      }
+    ],
+    "buildCommand": "npm run build",
+    "installCommand": "npm install",
+    "outputDirectory": "build"
+  }
